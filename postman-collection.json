@@ -1,0 +1,245 @@
+{
+  "info": {
+    "name": "Task Finance API",
+    "description": "Collection for testing Task and Finance API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "Create Task (High Priority)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Complete Project Documentation\",\n  \"deadline\": \"2026-05-15T18:00:00Z\",\n  \"priority\": \"high\",\n  \"status\": \"pending\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks"]
+            }
+          }
+        },
+        {
+          "name": "Create Task (Medium Priority)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Review Code Pull Requests\",\n  \"deadline\": \"2026-05-16T15:00:00Z\",\n  \"priority\": \"medium\",\n  \"status\": \"pending\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks"]
+            }
+          }
+        },
+        {
+          "name": "Create Task (Low Priority)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Organize Team Meeting\",\n  \"deadline\": \"2026-05-20T10:00:00Z\",\n  \"priority\": \"low\",\n  \"status\": \"pending\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks"]
+            }
+          }
+        },
+        {
+          "name": "Get All Tasks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tasks",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks"]
+            }
+          }
+        },
+        {
+          "name": "Schedule Recommendation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deadline\": \"2026-05-15T18:00:00Z\",\n  \"priority\": \"high\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tasks/schedule",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks", "schedule"]
+            }
+          }
+        },
+        {
+          "name": "Delete Task",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tasks/{{taskId}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tasks", "{{taskId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "item": [
+        {
+          "name": "Create Income",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"income\",\n  \"amount\": 5000000,\n  \"category\": \"Gaji\",\n  \"date\": \"2026-05-09T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/finance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["finance"]
+            }
+          }
+        },
+        {
+          "name": "Create Expense (Makan)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"expense\",\n  \"amount\": 500000,\n  \"category\": \"Makan\",\n  \"date\": \"2026-05-09T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/finance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["finance"]
+            }
+          }
+        },
+        {
+          "name": "Create Expense (Transport)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"expense\",\n  \"amount\": 100000,\n  \"category\": \"Transport\",\n  \"date\": \"2026-05-09T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/finance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["finance"]
+            }
+          }
+        },
+        {
+          "name": "Create Income (Bonus)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"income\",\n  \"amount\": 2000000,\n  \"category\": \"Bonus\",\n  \"date\": \"2026-05-09T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/finance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["finance"]
+            }
+          }
+        },
+        {
+          "name": "Get All Finance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/finance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["finance"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
