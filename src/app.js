@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('API is running...')
+});
+
 app.use('/tasks', taskRoutes);
 app.use('/finance', financeRoutes);
 
@@ -21,7 +25,3 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
-
-app.get('/', (req, res) => {
-  res.send('API is running...')
-})
