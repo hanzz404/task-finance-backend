@@ -19,7 +19,23 @@ async function createFinance(req, res, next) {
   }
 }
 
+async function deleteFinance(req, res, next) {
+  try {
+    const { id } = req.params;
+    const deleted = await Finance.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: 'Finance entry not found' });
+    }
+
+    res.json({ message: 'Finance deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   getFinance,
   createFinance,
+  deleteFinance,
 };
